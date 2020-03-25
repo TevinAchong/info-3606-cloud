@@ -1,0 +1,289 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{float}
+
+\begin{document}
+\pagenumbering{roman}
+\title{
+		\textbf{Student Name:} Tevin Achong\\
+		\textbf{Student ID:} 816000026\\
+		\textbf{Course Code:} INFO3606\\
+		\textbf{Course Title:} Cloud Computing\\
+		\textbf{Assignment:} 3
+		\date{April 15, 2020}
+}
+\maketitle
+
+\newpage
+\pagenumbering{arabic}
+
+\begin{center}
+	\textbf{Question 1}
+\end{center}
+
+
+
+\newpage
+\begin{center}
+	\textbf{Question 2}
+\end{center}
+
+\newpage
+\begin{center}
+	\textbf{Question 3}
+\end{center}
+
+Cloud service providers typically perform two major kinds of monitoring:
+\begin{itemize}
+\item
+Physical Monitoring
+\item
+Virtual Monitoring
+\end{itemize}
+
+\textbf{Physical Monitoring}
+\begin{itemize}
+\item
+Physical monitoring involves monitoring the physical infrastructure of the cloud. It deals with the internal status of cloud resources. 
+\item
+From the cloud point of view it refers to the server level. 
+\item
+Physical system monitoring is the basis for cloud system management as it is related to the physical computing infrastructure on which the cloud itself is built.
+\item
+It is here that conventional monitoring techniques such as computation-based tests and network-based tests are carried out.
+\item
+Computation-based tests are based on classical statistical measures such as mean, median, mode and temporal characteristics.
+\item
+Metrics measured by computation-based tests include: CPU utilization; CPU latency; CPU speed; CPU-related errors; memory utilization; memory page exchanges per second; memory latency; memory-related errors; and operating system metrics like system load;
+\item
+Metrics measured by network-based tests include: network latency; network utilization; network traffic; load patterns; network capacity bandwith; throughput; response time; round trip delay; jitter; packet/data loss; available bandwith; capacity, and; traffic volume
+\end{itemize}
+
+\textbf{Virtual Monitoring}
+\begin{itemize}
+\item
+Virtual system monitoring provides information about the virtual system characteristics of cloud services:
+\begin{itemize}
+\item
+In IaaS cloud the system manager can monitor the status of every VM instance in the cloud and its internal resources. 
+\item
+In PaaS cloud the system managar can monitor the use of platform resources such as hosting space used and simultaneous network connections.
+\item
+In SaaS cloud the system manager can mointor application usage patterns, resources shared among applications, etc.
+\item
+Virtual monitoring is the main means of controlling quality of service metrics and ensuring service delivery according to the values mentioned in SLAs.
+\end{itemize}
+\item
+Service providers use the metrics obtained from virtual system monitoring to calculate service costs and billing.
+\item
+Successful cloud business models almost always stem from virtual monitoring.
+\item
+Cloud users perform high-level monitoring determine how many resources they have consumed so that they can check their bills.
+\item
+In addition, such high-level monitoring makes it easy for consumers to compare the pricing of different cloud service providers.
+\item
+
+\end{itemize}
+
+
+\textbf{Purpose of Monitoring the Cloud:}
+\begin{itemize}
+\item
+Since there are physical and virtual resources that are distributed at different geographical locations in the cloud, without proper monitoring of cloud resources and services enterprises may fail to achieve the performance they set for themselves and benefits provided by the cloud. 
+\item
+They run the risk of failing to achieve the return on investment targeted.
+\item
+Cloud monitoring is the process of monitoring, evaluating, and managing cloud-based services, applications, and infrastructure.
+\item
+Aditionally, cloud monitoring is fundamental to:
+\begin{itemize}
+\item
+capacity planning
+\item
+calculating the usage of resources and providing billing to consumers
+\item
+identifying and addressing potential issues and providing troubleshooting
+\item
+delivering services according to the service level agreement
+\item
+providing detailed reports, in-depth graphs, and different metrics for performance management
+\item
+optimizing cloud solutions and services
+\item
+determining the status of resources hosted in the cloud
+\item
+adopting control activities and performing various core activities of the cloud such as resource allocation
+\item
+migrating without data loss
+\item
+managing security
+\item
+achieving those characteristics that are unique to the cloud: scalability, elasticity, and resource provisioning
+\end{itemize}
+\end{itemize}
+
+
+\newpage
+\begin{center}
+	\textbf{Question 4}
+\end{center}
+
+Six (6) core functions of Cloud Management Platforms (CMPs):
+\begin{enumerate}
+\item
+Service Request Management
+\begin{itemize}
+\item
+This is a self-service interface provided by CMPs through which various cloud services are easily consumed by consumers. 
+\item
+Cloud services providers offer service catalogs with SLAs and cost details.
+\item
+Based on the published information the CMP chooses the appropriate provider and services.
+\item
+Service requests can be routed through this interface to the CMP solution to automate most activities.
+\item
+Some users expect a service interface that serves as a pass-through to native capabilities within a public cloud service.
+\item
+The service portal or marketplace is continuously updated with fresh features, functionalities, and facilities to gain an edge or retain the edge gained.
+\item
+There are service and support management systems and other automation tools that readily fulfill varying requests from users.
+\item
+There are operational team members employed by cloud service providers or third-party teams that team up together to fulfill service requests quickly.
+\end{itemize}
+
+\item
+Provisioning, Orchestration, and Automation
+\begin{itemize}
+\item
+Provisioning, orchestration, and automation are the core capabilities of any CMP product.
+\item
+There is an arsenal of tools intrinsically enabling these vital features. There are plenty of cloud orchestration, provisioning, and configuring tools that are made available these days.
+\item
+There are industry strength standards for service and cloud infrastructure orchestration. Similarly, there are automation tools for job/task scheduling, load balancing, auto-scaling, resource allocation, etc.
+\item
+There are resource configuration management systems. Software deployment and delivery tools are also hitting the market.
+\item
+In a nutshell, cloud operations are being meticulously automated in an end-to-end fashion. 
+\end{itemize}
+
+\item
+Monitoring and Metering
+\begin{itemize}
+\item
+Monitoring, measurement, management, and metering are the basic requirements of any IT hardware and software packages.
+\item
+Service usage and resource consumption need to be accurately measured and metered. There are a bunch of tools for accomplishing these.
+\end{itemize}
+
+\newpage
+\item
+Multi-Cloud Brokering
+\begin{itemize}
+\item
+Brokerage solutions and services are very important at a time dominated by connected and federated clouds.
+\item
+Interconnectivity, intermediation, and other enrichment and enablement capabilities are being performed through cloud service brokers.
+\item
+There are connectors, adapters, drivers, and other solutions that establish a seamless linkage between public and private clouds.
+\item
+There are bridge solutions to establish direct connectivity between public clouds.
+\item
+Thus as a result of multiple clouds and services with different SLAs the role and responsibility of cloud brokers are bound to increase in the days ahead. Advanced CMPs are being fitted with brokerage tools and engines.
+\end{itemize}
+
+\item
+Security and Identity
+\begin{itemize}
+\item
+Concern over security is widespread among cloud users who rightly insist on security requirements in the cloud environment. 
+\item
+As customer-facing applications and data (corporate, customer, and confidential) are being held in the cloud environment, especially in public cloud, security is paramount. User identification, authentication, authorization, and other accountability and auditability are being pronounced as the most critical and crucial for continued spread of the cloud.
+\item
+The security and privacy of data while in transit, persistence, and usage are paramount for the intended success of the cloud idea.
+\item
+Key-based encryption and decryption, key management, etc. are getting a lot of attention these days. Single sign-on (SSO) is indispensable to multi-cloud applications.
+\item
+United threat and vulnerability management solutions are becoming highly popular in the cloud environment.
+\end{itemize}
+
+\item
+Service-Level Management
+\begin{itemize}
+\item
+Ensuring service-level and operation-level contracts agreed between cloud consumer and server are complied with is an important facet of the cloud arena. 
+\item
+Non-functional requirements (NFRs)/quality of service (QoS) attributes stand out as the key differentiators among all participating service providers.
+\item
+Scalability, availability, fault tolerance, security, and dependability are often repeated needs.
+\item
+Service resilience, application readability, and infrastructure versatility are given utmost importance for boosting user confidence in the cloud "mystery".
+\item
+There is a stunning array of toolsets that can be used to facilitate these complex capabilities. 
+\end{itemize}
+\end{enumerate}
+
+
+\newpage
+\begin{center}
+	\textbf{Question 5}
+\end{center}
+
+Five (5) reasons why Cloud Service Brokerages (CSBs) are needed:
+\begin{enumerate}
+\item
+Cloud service brokerages help organizations select the best cloud services for that organization's needs.
+\item
+Cloud service brokerages support line-of-business requirements, and meet IT demands across disparate cloud without jeopradizing performance or security.
+\item
+Cloud service brokerages may assist in the deployment and integration of applications across multiple clouds.
+\item
+Cloud service brokerages may provide options and possible cost savings by providing a catalog that compares competing services.
+\item
+Cloud service brokerages are master orchestrators who can manage the complexity of multiple cloud ecosystems and transform businesses into digital enterprises.
+\end{enumerate}
+
+Cloud service brokerage serves as an intermediary between cloud providers and cloud consumers. It assists companies in choosing services and offerings that best suit their needs. Cloud technology is increasingly playing a major part in bringing about digital business.
+The rapid adoption of cloud services from multiple cloud service providers (CSPs) and communication service providers creates a unique set of challenges for IT, specifically because enterprise IT teams must now orchestrate onboarding, managing, and delivering IT and business services from multiple portals and vendors. Such multiplicity makes it tough to ensure consistent performance, security, and control within the multi-cloud ecosystem and is the reason cloud brokerage platform solutions are becoming popular.
+
+\newpage
+\begin{center}
+	\textbf{Question 6}
+\end{center}
+
+Cloud Orchestration
+\begin{itemize}
+\item
+Orchestration is concerned with automating multiple tasks together. Processes typically comprise multiple tasks and systems.
+\item
+The tasks inscribed in a process need to be executed in sequence to be fruitful.
+\item
+That is, a process starts with an appropriate workflow representation and end with workflow execution. 
+\item
+Thus a process from workflow representation to workflow execution is simply termed orchestration.
+\item
+Orchestration deals with the end-to-end process, including management of all related services, taking care of high availability (HA), post-deployment, failure recovery, scaling and more. 
+\item
+Automating tasks or orchestration of workflows within a single enterprise may be easier as all the services, such as APIs, interfaces, standards, regulations, and policies, are confined within the enterprise. 
+\item
+However, enterprises now find themselves compelled to look at cloud offerings to meet many critical needs such as reduced capital and operational cost, uncertain loads, dynamic and unlimited scalability needs, and high availability. They depend on public clouds because of their inherent capabilities. At the same time enterprises have to depend on on-premises setups to protect legacy and sensitive data. 
+\item
+In spite of the challenges associated with a multi-cloud environment, enterprises are compelled to opt for multi-cloud and hybrid IT because of their benefits. 
+\item
+Cloud orchestration resolves some of the challenges associated with operations in multi-cloud environment. 
+\end{itemize}
+
+Four (4) functions of the Orchestration Engine:
+\begin{enumerate}
+\item
+helps automate delivery of infrastructure, application, and custom IT services
+\item
+supports direct integration of service management capabilities
+\item
+deploys application workloads across on-premises and off-premises environments
+\item
+provides policy-based governance and logical application modeling to help ensure that multi-vendor and multi-cloud services are delivered at the right size and service level for each task performed.
+\end{enumerate}
+\end{document}
