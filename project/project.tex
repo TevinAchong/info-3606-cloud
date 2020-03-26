@@ -38,17 +38,19 @@ Chef is a configuration management tool that is used to streamline the task of c
 Chef operates with three core components: \textbf{Chef Server}, \textbf{Workstations}, and \textbf{Nodes}. These three components communicate in a linear fashion, as explained below. 
 \begin{enumerate}
 \item
-\textbf{Workstations:} All the configuration code is created, tested, and changed at workstations, which are personal computers or virtual servers. There can exist as many workstations as is necessary. 
-\item
-\textbf{Chef Server:} The Chef Server is the center of all of Chef's operations. It provides a communication pathway between the workstations (where infrastructure is coded) and the nodes (where the configurations are deployed by the Chef client). Any configuration files, metadata, cookbooks and other information created on workstations are stored on the Chef server. Aditionally, the Chef server contains information regarding the state of all nodes at the time of the last chef-client run. Any changes made to infrastructure code must pass through the Chef server in order to be applied to nodes. Before accepting changes, the Chef server authenticates all communication via its REST API using public key encryption.
+\textbf{Workstations:} All the configuration code is created, tested, and changed at workstations, which are personal computers or virtual servers. There can exist as many workstations as is necessary. Additionally, cookbooks and policies that will be pushed to the Chef server and pulled by nodes are tested and maintained here. The Chef Workstation provides chef and command line tools, the testing tools Test Kitchen, ChefSpec, Cookstyle, and Foodcritic, and InSpec - a tool that allows you to write automated tests for compliance, security and policy requirements. Cookbooks created on workstations can be used privately or by one organization, or uploaded to the Chef Supermarket for other to use. Workstations can also be used to download cookbooks created by other Chef users and found in the Chef Supermarket.
 \item
 \textbf{Nodes:} These are the servers that are managed by Chef i.e. the machines to which changes are being pushed. Nodes are generally a fleet of multiple machines that require the benefits of automation. Chef can manage nodes that are virtual servers, containers, network devices, and storage devices and a Chef client is installed on every node that is under management by Chef. 
+\item
+\textbf{Chef Server:} The Chef Server is the center of all of Chef's operations. It provides a communication pathway between the workstations (where infrastructure is coded) and the nodes (where the configurations are deployed by the Chef client). Any configuration files, metadata, cookbooks and other information created on workstations are stored on the Chef server. Aditionally, the Chef server contains information regarding the state of all nodes at the time of the last chef-client run. Any changes made to infrastructure code must pass through the Chef server in order to be applied to nodes. Before accepting changes, the Chef server authenticates all communication via its REST API using public key encryption. In turn, the Chef Server is also made of several components which aid it in efficiently communicating with workstations and nodes. Each Chef Server uses an NGINX front-end load balancer to route all requests to the Chef Server API, and PostgreSQL to store data. A web interface, known as Chef manage, is used for common Chef server management tasks. An Apache Solr instance, wrapped by chef-solr, is used for indexing and searching. All these components help to make the Chef server capable of handling requests for several thousands of nodes and make Chef server a resource heavy application.
 \end{enumerate}
 
 \subsection{Architecture}
-In order to achieve its goals, Chef treats infrastructure as code. Instead of manually changing anything, the machine setup is described in a Chef \textit{recipe}. \textit{Cookbooks} store collections of recipes. Ideally, one cookbooks relates to a single task, but it can have numerous server configurations involved. The chef server stores each of the cookbooks and as a new chef client node checks in with the server, recipes are sent to tell the node how to configure itself. Afterwards, the client will occassionally check in with the server to see if anything needs to be changed. If something does need to be changed, then the client deals with it. Patches and updates can be applied to the entire infrastructure by changing the recipe; there is no need to interact with each machine individually.
-As such, Chef utilizes a three-tier client-server architecture. The working units (like cookbooks) are developed on the Chef workstation. From the command line utilities like Knife, they are uploaded to the Chef server and all the nodes which are present in the architecture are registered with the Chef server. \\
- 
+In order to achieve its goals, Chef treats infrastructure as code. Instead of manually changing anything, the machine setup is described in a Chef \textit{recipe}. \textit{Cookbooks} store collections of recipes. Ideally, one cookbook relates to a single task, but it can have numerous server configurations involved. The chef server stores each of the cookbooks and as a new chef client node checks in with the server, recipes are sent to tell the node how to configure itself. Afterwards, the client will occassionally check in with the server to see if anything needs to be changed. If something does need to be changed, then the client deals with it. Patches and updates can be applied to the entire infrastructure by changing the recipe; there is no need to interact with each machine individually.
+\textit{Bookshelf} is used to store cookbooks and related files and templates. The Chef Server uses a Bookshelf that operates as a versioned repository. Full root access is required. Whenever a cookbook is uploaded to the Chef server, the new version of the cookbook is compared to the one already stored on the server. If any changes exist, a new version is stored. If resources are shared between cookbooks and cookbook versions, they will not be stored more than once. This is because the Chef Server stores one copy of a file or template.
+As such, Chef utilizes a three-tier client-server architecture. The working units (like cookbooks) are developed on the Chef workstation. From the command line utilities like Knife, they are uploaded to the Chef server and all the nodes which are present in the architecture are registered with the Chef server. Figure 1 below depicts this architecture.\\
+
+\begin{figure}[H] 
 \begin{center}
 \begin{tikzpicture}[node distance=4cm]
 \node (workstation) [workstation] {Chef Workstation};
@@ -72,6 +74,8 @@ As such, Chef utilizes a three-tier client-server architecture. The working unit
 
 \end{tikzpicture}
 \end{center}
+\caption{Architecture of Chef} \label{fig:1}
+\end{figure}
 
 \subsection{Features}
 Chef provides the following features:
@@ -108,8 +112,38 @@ Server Monitoring
 \subsection{Official Website}
 The official website for Chef is located at \href{https://www.chef.io}{https://www.chef.io}.
 \subsection{Latest Version}
+As of January 28, 2019, the latest stable release of the Chef client is v14.10.9.\\
+As of October 15, 2018, the latest stable release of the Chef server is v12.18.14.
 \subsection{Advantages}
+Advantages of using Chef include:
+\begin{enumerate}
+\item
+There is a low barrier for entry. Chef uses native Ruby language for configuration. This means that it can be easily picked up by anyone who has some development experience.
+\item
+It integrates execellently with cloud. Using the knife utility, Chef can be easily integrated with most existing cloud technologies. It is a suitable tools for organizations that wish to distribute their infrastructure on multi-cloud environment. 
+\item
+Chef can help organizations to accelerate software delivery, i.e. how quickly the software is able to be changed in response to new requirements or conditions. 
+\item
+Helps organizations to catch bugs and issues before they occur. Infrastructure automation increases a system's resiliency just as much as it accelerates delivery speed. 
+\item
+Improving risk management - the \textit{quality} of changes made to the software.
+\item
+When using Chef, you can deliver all your infrastructure everywhere continuously.
+\end{enumerate}
 \subsection{Disadvantages}
+Some disadvantages include:
+\begin{enumerate}
+\item
+Cookbooks require constant monitoring so that the people who are working do not cause any issues with them. 
+\item
+Only Chef solo is available. 
+\item
+Currently, Chef is only a good fit for Amazon Web Services Cloud. 
+\item
+Someone who is not familiar with Ruby may have a hard time learning it.
+\item
+There is currently a lack of proper documentation.
+\end{enumerate}
 
 \newpage
 \section{Ansible}
@@ -150,5 +184,13 @@ The official website for Chef is located at \href{https://www.chef.io}{https://w
 \subsection{Latest Version}
 \subsection{Advantages}
 \subsection{Disadvantages}
+
+\newpage
+\section{References NEED TO FORMAT PROPERLY}
+\href{https://shadow-soft.com/chef-benefits/}{https://shadow-soft.com/chef-benefits/}\\
+\href{https://www.tutorialspoint.com/chef/chef_overview.htm}{https://www.tutorialspoint.com/chef/chef\_overview.htm}\\
+\href{https://www.linode.com/docs/applications/configuration-management/beginners-guide-chef/}{https://www.linode.com/docs/applications/configuration-management/beginners-guide-chef/}\\
+
+
 
 \end{document}
