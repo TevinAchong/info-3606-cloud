@@ -150,14 +150,80 @@ There is currently a lack of proper documentation.
 Ansible is an open-source automation tool, or platform, used for IT tasks such as configuration management, application deployment, intraservice orchestration, and provisioning. Thus, simplifying complex tasks, making the jobs of developers more manageable and allowing them to focus attention on other tasks that addd value to their organization. 
 
 \subsection{Components}
+\begin{itemize}
+\item
+\textbf{Plays}\\
+Playbooks contain plays. Plays are essentially groups of tasks that are performed on defined hosts to enforce your defined functions. Each play must specify a host or group of hosts. 
+\item
+\textbf{Tasks}\\
+Tasks are actions carried out by playbooks. A task definition can contain modules such as yum, git, service, and copy.
+\item
+\textbf{Roles}\\
+A role is the way Ansible bundles automation content to make it reusable. Roles are organizational components that can be assigned to a set of hosts to organize tasks. Therefore, instead of creating a monolithic playbook, we can create multiple roles, with each role assigned to complete a unit of work. For example: a webserver role can be defined to install Apache and Varnish on a specified group of servers.
+\item
+\textbf{Handlers}\\
+Handlers are very similar to tasks. The major difference is that a handler will be executed only when it is called by an event. The handler is called by the [notify] directive. The name of the notify directive and the handler must be the same. 
+\item
+\textbf{Templates}\\
+Templates files are based on Python's Jinja2 template engine and have a .j2 extension. If necessary, you can place contents of your index.html file into a template file. But the real power of templates is comes when variables are used. Ansible's [facts] can be used in template files, and users can even call custom variables.
+\item
+\textbf{Variables}\\
+You can include custom-made variables in your playbooks. Variables can be defined in five (5) different ways:
+\begin{enumerate}
+\item
+Variables defined under the vars\_file attribute.
+\item
+Variables defined in \textit{role}/vars/apache-install.yml
+\item
+Variables passed through the command line.
+\item
+Variables defined in the play under vars.
+\item
+Variables defined in group\_vars/ directory.
+\end{enumerate}
+\end{itemize}
 
 \subsection{Architecture}
+The architecture that makes up Ansible is as follows:
+\begin{itemize}
+\item
+\textbf{Modules}\\
+Ansible works by connecting to your nodes and pushing out small programs, called "Ansible Modules" to them. These programs are written to be resource of the desired state of the system. Ansible then executes these modules (over SSH by default), and removes them when finished. Your library of modules can reside on any machine, and there are no servers, daemons, or databases required. Typically you'll work with your favorite terminal program, a text editor, and probably a version control system to keep track of changes to your content.
+\item
+\textbf{Plugins}\\
+Plugins are pieces of code that augment Ansible's core functionality.
+\item
+\textbf{Inventory}\\
+The inventory is a configuration file where you define the host information.
+\item
+\textbf{Playbooks}\\
+A playbook is where users define how to apply policies, declare configurations, orchestrate steps and launch tasks either synchronously or asynchronously on their servers.  Each playbook is composed of one or more plays. Playbooks are normally maintained and managed in a version control system like Git. They are expressed in YAML (Yet Another Markup Language). In most cases - especially in enterprise environments - using Ansible playbooks is recommended.
+\end{itemize}
+
+
 \subsection{Features}
+\begin{itemize}
+\item
 \textbf{Configuration Management}\\
-Ansible is designed to be very simple, reliable, and consistent for configuration management. Users who are familiar with the field of Information Technology can usually get up and running fairly quickly with Ansible. 
+Ansible is designed to be very simple, reliable, and consistent for configuration management. Users who are familiar with the field of Information Technology can usually get up and running fairly quickly with Ansible. Ansible configurations are simple data descriptions of infrastructure and are both by readable by humans and parsable by machines. A password or an SSH key is all that is needed to start managing systems. For example, if a user wants to install an updated version of a specific type of software on all the machines in their enterprise, all they need to do is write out all the IP addresses of the nodes (also called remote hosts) and write an Ansible playbook to install it on all the nodes, then run the playbook from their control machine.
+\item
+\textbf{Application Deployment}\\
+Ansible also allows users to quickly and easily deploy multitier applications. Users do not need to write custom code to automate their systems; they simply need to list the tasks required to be done in a playbook, and Ansible will figure out how to get their systems to the state they want them to be in. In other words, users need not configure the applications on every machine manually. When a playbook is run from the user's control machine, Ansible uses SSH to communicate with the remote hosts and run all the commands (tasks).
+\item
+\textbf{Orchestration}
+Orchestration involves bringing different elements into an efficiently-running, whole operation. For example, with application deployment, users need to manage the front-end and backend services, databases, networks, storage, and so on. They also need to ensure that all tasks are handled in the proper order. Ansible uses automated workflows, provisioning, and more to simplify the process of orchestration. Once the infrastructure has been defined using Ansible playbooks, that same orchestration can be used wherever it is needed. This is due largely to the portability of Ansible playbooks.
+\item
+\textbf{Security and Compliance}\\
+As with application deployment, sitewide security policies (such as firewall rules) can be implemented along with other automated processes. If the security details on the control machine are configured and the associated playbook is run, all the remote hosts will automatically be updated with those details. Therefore, users will not need to monitor each machine for security compliance continually manually. For extra security, an admin's user ID and password are not retrievable in plain text on Ansible.
+\item
+\textbf{Cloud Provisioning}\\
+The first step in automating your applications' life cycle is automating the provisioning of your infrastructure. With Ansible, you can provision cloud platforms, virtualized hosts, network devices, and bare-metal servers.
+\end{itemize}
 
 \subsection{Official Website}
+The official website for Ansible is \href{https://www.ansible.com/}{https://www.ansible.com/}.
 \subsection{Latest Version}
+As of June 14, 2018, the latest version of Ansible is 2.5.5.
 \subsection{Advantages}
 Ansible offers the following advantages:
 \begin{enumerate}
@@ -175,6 +241,18 @@ Ansible offers the following advantages:
 \textit{Efficient:} Because there is no need to install any extra software, there is more room for application resources on the server.
 \end{enumerate}
 \subsection{Disadvantages}
+Disadvantages of Ansible include:
+\begin{enumerate}
+\item
+\textbf{No Notion of State:} Unlike comparable automation tools, Ansible has no notion of state. Since it does not keep track of dependencies, the tool simply executes a sequential series of tasks, stopping when it finishes, fails or encounters an error. Many users tend to prefer that their automation tool maintain an extensive catalog for ordering, allowing them to reach a defined state regardless of any variance in environmental conditions.
+\item
+\textbf{Nascent Windows Support}: Ansible suports both Unix/Linux and Windows nodes. For Windows nodes it uses native powershell remoting (as opposed to SSH), and a Linux control machine is still required for managing Windows hosts. Ansible is still early in its efforts to extend support for Windows. 
+\item
+\textbf{Minimal Enterprise Support Experience:} Ansible has had considerably less experience working with large enterprises than competitors like Chef and Puppet. 
+\item
+\textbf{Relatively New:} Ansible has not been around as long as competitors such as Chef or Puppet. As a result, it has the smallest developer/user community and has the least easily accessible material on the internet for self-help and troubleshooting. Less time on the market means more bugs, edge scenarios, and software issues have perhaps not yet appeared. 
+\end{enumerate}
+
 
 \newpage
 \section{Fuel}
@@ -211,7 +289,8 @@ Ansible offers the following advantages:
 \href{https://shadow-soft.com/chef-benefits/}{https://shadow-soft.com/chef-benefits/}\\
 \href{https://www.tutorialspoint.com/chef/chef_overview.htm}{https://www.tutorialspoint.com/chef/chef\_overview.htm}\\
 \href{https://www.linode.com/docs/applications/configuration-management/beginners-guide-chef/}{https://www.linode.com/docs/applications/configuration-management/beginners-guide-chef/}\\
-
+\href{https://www.simplilearn.com/what-is-ansible-article}{https://www.simplilearn.com/what-is-ansible-article}\\
+\href{https://cloudacademy.com/blog/ansible-aws/}{https://cloudacademy.com/blog/ansible-aws/}
 
 
 \end{document}
