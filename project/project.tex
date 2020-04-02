@@ -257,9 +257,61 @@ Disadvantages of Ansible include:
 
 \newpage
 \section{Fuel}
+Fuel is an open-source deployment and management tool for OpenStack. It was developed as an OpenStack community effort, and provides an intuitive, GUI-driven experience for deployment and management of OpenStack and related community projects and plug-ins.
+Fuel provides consumer-grade simplicity to streamline and accelerate the otherwise time-consuming, often complex, and error-prone process of deploying, testing and maintaining various configuration flavors of OpenStack at scale. Unlike other platform-specific deployment or management utilities, Fuel is an upstream OpenStack project that focuses on automating the deployment and testing of OpenStack and a range of third-party options, so it is not compromised by hard bundling or vendor lock-in.
 \subsection{Components}
+
+
 \subsection{Architecture}
+Fuel is comprised of several independent components. Some components are Fuel-specific components, while others are third-party services like Cobbler, Puppet, Mcollective, etc. Some components can be reused separately from Fuel without any further modifications, while some others will require small adjustments.
+\begin{itemize}
+\item
+\textbf{UI} is single page application, and is written in JavaScript. It uses bootstrap and backbone frameworks.
+\item
+\textbf{Nailgun} is the core of the Fuel project. Like other OpenStack projects, Nailgun is written in the Python programming language. It implements a REST API as well as deployment data managemen. It manages disk volumes, configuration data, network configuration data and any other environment specific data which are necessary for successful deployment. It has required orchestration logic to build isntructions for provisioning and deployment in the right order. Nailgun uses a SQL database to store its data and AMQP service to interact with workers. 
+\item
+\textbf{Astute} represents Nailgun's workers, and its function is to run certain actions according to the instructions provided by Nailgun. Astute is nothing more than a layer which encapsulates all the details with a variety of services such as Cobbler, Puppet, shell scripts etc. and provides a universal asynchronous interface to those services. We can either manage a service directly via its native protocol or we can use MCollective agents to perform specific tasks. Astute exchanges the data with Nailgun via AMQP. 
+\item
+\textbf{Cobbler} is currently used as a provisioning service. There is a POC ready to move to Ironic, and a production version is being implemented. 
+\item
+\textbf{Puppet} is currently Fuel's only deployment service. It would be possible to create MCollective agents to manage other configuration management frameworks, such as Chef or SaltStack. 
+\item
+\textbf{MCollective agents} enable us to perform specific tasks such as hard-drive cleaning, network connectivity probing, etc. 
+\item
+\textbf{OSTF(OpenStack Testing Framework)} is a separate component which can be easily removed and reused without Fuel. It implements post-deployment verification of OpenStack. Its main goal is to verify maximum functionality taking a minimum amount of time.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{img/fuel_arch.png}
+  	\caption{The Architecture of Fuel (source: \href{https://wiki.openstack.org/wiki/Fuel}{https://wiki.openstack.org/wiki/Fuel})}
+	\label{fig:4-waycache}
+\end{figure}
+
+
 \subsection{Features}
+The key features of Fuel are:
+\begin{itemize}
+\item
+hardware discovery
+\item
+hardware configuration in UI (networks \& disk partitioning)
+\item
+ability to spin up and manage multiple OpenStack clusters
+\item
+support for non-HA and HA OpenStack deployment configurations
+\item
+pre-deployment checks and network validation
+\item
+post-deployment checks and running a set of tests for validating deployed OpenStack
+\item
+view logs in real-time through UI
+\item
+support for CentOS and Ubuntu, and it can be extended to support other distributions too
+\item
+support for multiple OpenStack distributions
+\end{itemize}
+
 \subsection{Official Website}
 \subsection{Latest Version}
 \subsection{Advantages}
@@ -293,6 +345,6 @@ Disadvantages of Ansible include:
 \href{https://www.simplilearn.com/what-is-ansible-article}{https://www.simplilearn.com/what-is-ansible-article}\\
 \href{https://cloudacademy.com/blog/ansible-aws/}{https://cloudacademy.com/blog/ansible-aws/}\\
 \href{https://docs.ansible.com/ansible/latest/dev_guide/overview_architecture.html}{https://docs.ansible.com/ansible/latest/dev\_guide/overview\_architecture.html}\\
-
+\href{https://wiki.openstack.org/wiki/Fuel}{https://wiki.openstack.org/wiki/Fuel}\\
 
 \end{document}
