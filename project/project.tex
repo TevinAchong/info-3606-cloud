@@ -1,11 +1,12 @@
-\author{Tevin Achong - 816000026, Jonathan Owen -}
+\author{Tevin Achong - 816000026, Jonathan Owen - 816001156}
 \documentclass[a4paper, 12pt]{article}
 
 \usepackage[left=2cm, right=2cm, top=2cm]{geometry}
 \usepackage{color}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{hyperref}
+\usepackage[colorlinks = true,
+			urlcolor = blue]{hyperref}
 \usepackage{tikz}
 \usetikzlibrary{shapes, arrows}
 
@@ -21,7 +22,7 @@
 		\textbf{Course Code:} INFO3606\\
 		\textbf{Course Title:} Cloud Computing\\
 		\textbf{Semester Project}
-		\date{April 8, 2020}
+		\date{April 15, 2020}
 }
 \maketitle
 
@@ -224,7 +225,7 @@ The first step in automating your applications' life cycle is automating the pro
 \subsection{Official Website}
 The official website for Ansible is \href{https://www.ansible.com/}{https://www.ansible.com/}.
 \subsection{Latest Version}
-As of June 14, 2018, the latest version of Ansible is 2.5.5.
+As of June 14, 2018, the latest version of Ansible is 2.9.
 \subsection{Advantages}
 Ansible offers the following advantages:
 \begin{enumerate}
@@ -313,38 +314,247 @@ support for multiple OpenStack distributions
 \end{itemize}
 
 \subsection{Official Website}
+The official documentation for Fuel can be found at \href{http://docs.fuel-infra.org/openstack/fuel/}{http://docs.fuel-infra.org/openstack/fuel/}.
 \subsection{Latest Version}
+Based on our research, the latest available version of Fuel for OpenStack is 9.1.
 \subsection{Advantages}
 \subsection{Disadvantages}
 
 \newpage
 \section{Puppet}
+Puppet is a powerful enterprise-grade Configuration Management tool that is used for deploying, configuring and managing servers. Puppet uses a Ruby-based domain specific language (DSL) reducing the complexity of automation for engineers trying to complete basic tasks. Furthermore Puppet focuses on automation, “write once deploy many” code and auditing and enforcing code.
+
 \subsection{Components}
+Puppet environment consist of two main components and they are the main server environment called the puppet master and the client environment called the Puppet client. Within these:
+\begin{itemize}
+\item
+Puppet master - Puppet Master is the main mechanism that handles all the configurations. The master applies the configurations to nodes using the Puppet agent.
+\item
+Puppet Agent - Puppet Agents are the working machines which are managed by the Puppet master. The Puppet agent daemon service running inside them.
+\item
+Config Repository - This is the repository where all nodes and server related configurations are saved and pulled when required.
+\item
+Facts - This  is all the information related to the node or the master machine. They are used for analyzing the current status of any node. On the basis of facts, changes are done on any target machine. There are pre-defined and custom facts in Puppet.
+\item
+Catalog - All the manifest files or configuration which are written in Puppet are first converted to a compiled format called catalog and later those catalogs are applied on the target machine.
+\item
+Manifests - These are the authentic codes for configuring the clients.
+\item
+Class - Classes properly organize the code. 
+\item
+Resources - Within the coding block resources may represent packages, files, users and commands.
+\item
+Nodes - Nodes are considered to be all servers or clients that need to be managed.
+\item
+Puppet client - The Puppet client is the machine that is configured, it consist of the Agent and Facter. The agent constantly interacts with the master server to guarantee that the certificates are being updated appropriately. The facter collects the current state of the client that is used and communicates it back through the agent.
+
+\end{itemize}
+
+
 \subsection{Architecture}
+How Puppet executes its operations:\\
+Firstly an agent node sends facts to the master and requests a catalog. Secondly the puppet master server compiles and returns the node’s catalog using the sources of information the master has access to.
+Thirdly the puppet agent applies the catalog to the node by analyzing each resource the catalog describes. If resources are found not in their desired state, it makes the necessary changes to correct them. Or, in no-op mode, it examines what changes would be needed to reconcile the catalog.
+Lastly the agent sends a report back to the puppet master.
+
 \subsection{Features}
+Puppet provides the following features:
+\begin{itemize}
+\item
+Continuous Delivery
+\item
+Continuous Compliance
+\item
+Incident Remediation
+\item
+Configuration Management
+\item
+DevOps automation for a multi-cloud world
+\end{itemize}
+
 \subsection{Official Website}
+The official website for Puppet is located at \href{https://puppet.com}{https://puppet.com}
+
 \subsection{Latest Version}
+As of March 10, 2020, the latest stable relase of Puppet management tool is Puppet 6.14.0.
+
 \subsection{Advantages}
+Advantages of using Puppet include:
+\begin{enumerate}
+\item
+Puppet is open-source and it is also extendable. It can be extended to build custom libraries and modules to suit the needs of projects.
+\item
+Puppet allows resource abstraction. Configuration tasks that are done may be needed across a range of servers that all have different operating systems and other platform specific identities and administrators may not remember what was previously done. This is where factor helps Puppet know the system details such as the operating system and IP address. With this information, Puppet achieves abstraction.
+\item
+Puppet does transactions only if needed with the feature idempotency. This applies changes only when asked. If changes are already done to the system, puppet leaves the system at its present state.
+\item
+Puppet improves manageability and productivity for system administrators. They are freed up to focus on more complex tasks that require human intervention. Furthermore it helps the server become more manageable.
+\item
+Puppet is cross-platform allowing users to cover a wider range of platforms which makes more servers come into the configuration fold. Puppet operates on platforms such as Fedora, RHEL, Debian, Gentoo, Solaris, OS X, and Windows.
+\item
+Puppet declarative language is clean and easily to learn. Individuals with limited programming knowledge/skill can easily pick it up.
+\item
+Puppet has cron-like support, this schedule specific maintenance actions on a periodic basis. Furthermore helps the administrators accomplish some cron jobs in the maintenance cycle.
+\item
+Puppet has override mechanisms to override an instruction with another one for different scenarios. When exceptions are to be made while applying configurations the override mechanism is useful. 
+\item
+Puppet has an active community with plenty of active discussion boards, forums and experts always willing to assist individuals.
+\end{enumerate}
+
 \subsection{Disadvantages}
+Disadvantages of using Puppet include:
+\begin{enumerate}
+\item
+Puppet releases new versions rapidly making it a task to keep up with the new features and breaking changes.
+\item
+Puppet may not be suitable for smaller setups and businesess.
+\item
+Puppet does not have comprehensive reporting features.
+\end{enumerate}
 
 \newpage
 \section{Compass}
+Compass is an open source project for the automated deployment and management of OpenStack. It follows the OpenStack community four opens: Open Source, Open Community, Open Development, and Open Design. Furthermore it provides data modeling, configuration API, and WebUI to the end users in bootstrapping and manages a software defined data center infrastructure.
+
 \subsection{Components}
+Components in Compass include:
+\begin{itemize}
+\item
+A RESTful API server which is implemented in Python Flask.
+\item
+A demo Web UI which consumes the RESTful APIs. This is a pure JavaScript WebApp developed with AngularJS. Furthermore it allows third party application to have a different UI using the same APIs.
+\item
+A meta-data module that developers use to provide custom data model for OpenStack configurations and expand core functionality. Also based on the metadata the RESTful API layer provides the updated API automatically and no code change is required.
+\item
+An adapter interface for automatic resource discovery. Current discovery mechanism is based on stanard MIB over SNMP query to ToR switches. Other mechanisms (such as IPMI, or Intel's next-gen RSA) are possible by adding plugins.
+\item
+An adapter interface for configuration management tools such as Chef  and Ansible . Other mechanisms (such as Puppet) are possible by adding plugins.
+\item
+A Cobbler interface for Operating system (OS) provisioning. Configuration details of kickstart files or seed files are hidden so the interface provides a user-friendly OS-level provisioning
+\end{itemize}
+
 \subsection{Architecture}
+Compass provides programmability allowing easy integration with operators’ OSS and other ecosystem tools. It also enables extensibility through meta-data allowing specification of a different flavor of OpenStack configuration. Furthermore the plugins support also allows users to extend the system.
+
 \subsection{Features}
+Features of Compass:
+\begin{itemize}
+\item
+Assisting systems administrators in determining hardware.
+\item
+Assisting systems administrator in deploying the OS and hypervisor.
+\item
+Implementation of different configuration flavors through metadata.
+\item
+Blending with other tools for resource discovery, OS planning, and package deployment
+\end{itemize}
+
 \subsection{Official Website}
+The official website for Compass is located at \href{http://www.syscompass.org/}{http://www.syscompass.org/}.
+
 \subsection{Latest Version}
+As of Monday 21st March 2016 the latest release of compass is v2.5.
+
 \subsection{Advantages}
+Advantages of using Compass:
+\begin{enumerate}
+\item
+Reduces the complexity and error-prone deployment process of several distributed systems for example Openstack and Ceph.
+\item
+Can remotely install and configure physical servers in the datacenter.
+\item
+Reduces the amount of time taken by datacenter server management 
+\item
+Can remotely install and configure a Hadoop cluster.
+\item
+Supports in bootstrapping the server pool correlated with any cloud platform from exposed metal nodes.
+\item
+The extensible architecture allows easy integration with most of the popular automation tools.
+\end{enumerate}
+
 \subsection{Disadvantages}
 
 \newpage
-\section{References NEED TO FORMAT PROPERLY}
+\section{References}
+SHADOW SOFT\\
+\textit{6 Benefits of Chef's Infrastructure Automation Tools}\\
+Published on April 3, 2017\\
 \href{https://shadow-soft.com/chef-benefits/}{https://shadow-soft.com/chef-benefits/}\\
+
+\noindent
+TUTORIALSPOINT\\
+\textit{Learn Chef: absolute beginners}\\
 \href{https://www.tutorialspoint.com/chef/chef_overview.htm}{https://www.tutorialspoint.com/chef/chef\_overview.htm}\\
+
+\noindent
+LINODE\\
+\textit{A Beginner's Guide to Chef}\\
+Published on December 18, 2019\\
 \href{https://www.linode.com/docs/applications/configuration-management/beginners-guide-chef/}{https://www.linode.com/docs/applications/configuration-management/beginners-guide-chef/}\\
+
+\noindent
+SIMPLILEARN\\
+\textit{What is Ansible: Advantages, Features, and Architecture}\\
+Published on April 8, 2020 by Shivam Arora\\
 \href{https://www.simplilearn.com/what-is-ansible-article}{https://www.simplilearn.com/what-is-ansible-article}\\
+
+\noindent
+CLOUDACADEMY\\
+\textit{Ansible and AWS: Cloud IT Automation Management}\\
+Published on October 21, 2015 by Chandan Patra\\
 \href{https://cloudacademy.com/blog/ansible-aws/}{https://cloudacademy.com/blog/ansible-aws/}\\
+
+\noindent
+ANSIBLE\\
+\textit{Ansible Architecture}\\
 \href{https://docs.ansible.com/ansible/latest/dev_guide/overview_architecture.html}{https://docs.ansible.com/ansible/latest/dev\_guide/overview\_architecture.html}\\
+
+\noindent
+OPENSTACK WIKI\\
+\textit{Fuel for OpenStack}\\
 \href{https://wiki.openstack.org/wiki/Fuel}{https://wiki.openstack.org/wiki/Fuel}\\
+
+\noindent
+PUPPET\\
+\href{https://puppet.com/}{https://puppet.com/}\\
+
+\noindent
+QUORA\\
+\textit{What is the use of puppet?}\\
+Published on August 30, 2016 by Karim Memon\\
+\href{https://www.quora.com/What-is-the-use-of-puppet}{https://www.quora.com/What-is-the-use-of-puppet}\\
+
+\noindent
+PUPPET\\
+\textit{Puppet Architecture}\\
+\href{https://puppet.com/docs/puppet/latest/architecture.html}{https://puppet.com/docs/puppet/latest/architecture.html}\\
+
+\newpage
+\noindent
+EZEELIVE\\
+\textit{What is the Puppet? Its Pros and Cons}\\
+Published on January 9, 2020.\\
+\href{https://ezeelive.com/puppet-pros-cons/}{https://ezeelive.com/puppet-pros-cons/}\\
+
+\noindent
+OPENSTACK WIKI\\
+\textit{Compass for OpenStack}\\
+\href{https://wiki.openstack.org/wiki/Compass}{https://wiki.openstack.org/wiki/Compass}\\
+
+\noindent
+OPENDEV\\
+\textit{Automating Distributed System Deployment to Baremetal Resources: compass-core}\\
+\href{https://github.com/openstack/compass-core}{https://github.com/openstack/compass-core}\\
+
+\noindent
+OPENDEV\\
+\textit{A web-based UI consuming the Restful API service provided by Compass}\\
+\href{https://opendev.org/x/compass-web}{https://opendev.org/x/compass-web}\\
+
+\noindent
+GEEKFLARE\\
+\textit{Top 5 Open Source Tools to Manage OpenStack Server}\\
+Published on November 8, 2019\\
+\href{https://geekflare.com/openstack-opensource-tools/}{https://geekflare.com/openstack-opensource-tools/}\\
 
 \end{document}
