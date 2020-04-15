@@ -32,6 +32,10 @@
 \tableofcontents
 
 \newpage
+\section{Group Member Roles and Responsibilities}
+This group was comprised of Tevin Achong (816000026) and Jonathan Owen (816001156). Overall, the project was a highly collaborative effort. However, since there were many tools to be researched, we divided the work among both members. Tevin was responsible for the research and write up on the tools \textbf{Chef}, \textbf{Ansible}, and \textbf{Fuel}; while Jonathan was responsible for the research and write up on the tools \textbf{Puppet} and \textbf{Compass}. Both members collaborated to produce the table of comparisons seen at the end of the document.
+
+\newpage
 \section{Chef}
 Chef is a configuration management tool that is used to streamline the task of configuring and maintaining a company's servers. Aditionally, Chef can integrate with various cloud-based platforms to automatically provision and configure new machines. It contains solutions for small and large scale systems, and features and pricing for each of the various ranges. Essentially, Chef ensures that the files and the software that users are expecting to be on a machine are actually present, configured correctly, and working as is expected. Performing these tasks for a single machine is fairly straightforward. However, as an organization's infrastructure scales up (more machines are introduced) it becomes increasingly difficult. This is the reason Chef was developed and is used.
 
@@ -357,6 +361,14 @@ Firstly an agent node sends facts to the master and requests a catalog. Secondly
 Thirdly the puppet agent applies the catalog to the node by analyzing each resource the catalog describes. If resources are found not in their desired state, it makes the necessary changes to correct them. Or, in no-op mode, it examines what changes would be needed to reconcile the catalog.
 Lastly the agent sends a report back to the puppet master.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{img/puppet_arch.jpg}
+  	\caption{Puppet Architecture (\href{https://www.tutorialspoint.com/puppet/puppet\_architecture.htm}{https://www.tutorialspoint.com/puppet/puppet\_architecture.htm})}
+	\label{fig:puppet_arch}
+\end{figure}
+
+
 \subsection{Features}
 Puppet provides the following features:
 \begin{itemize}
@@ -434,6 +446,14 @@ A Cobbler interface for Operating system (OS) provisioning. Configuration detail
 \end{itemize}
 
 \subsection{Architecture}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{img/compass_arch.png}
+  	\caption{Compass Architecture}
+	\label{fig:compass_arch}
+\end{figure}
+
 Compass provides programmability allowing easy integration with operators’ OSS and other ecosystem tools. It also enables extensibility through meta-data allowing specification of a different flavor of OpenStack configuration. Furthermore the plugins support also allows users to extend the system.
 
 \subsection{Features}
@@ -473,6 +493,14 @@ The extensible architecture allows easy integration with most of the popular aut
 \end{enumerate}
 
 \subsection{Disadvantages}
+
+\section{Table of Comparison of Tools}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{img/table_comp.png}
+  	\caption{Table of Comparison of Features}
+	\label{fig:table_comp}
+\end{figure}
 
 \newpage
 \section{References}

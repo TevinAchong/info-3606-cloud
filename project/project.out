@@ -1,41 +1,43 @@
-\BOOKMARK [1][-]{section.1}{Chef}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Components}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Architecture}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{Features}{section.1}% 4
-\BOOKMARK [2][-]{subsection.1.4}{Official Website}{section.1}% 5
-\BOOKMARK [2][-]{subsection.1.5}{Latest Version}{section.1}% 6
-\BOOKMARK [2][-]{subsection.1.6}{Advantages}{section.1}% 7
-\BOOKMARK [2][-]{subsection.1.7}{Disadvantages}{section.1}% 8
-\BOOKMARK [1][-]{section.2}{Ansible}{}% 9
-\BOOKMARK [2][-]{subsection.2.1}{Components}{section.2}% 10
-\BOOKMARK [2][-]{subsection.2.2}{Architecture}{section.2}% 11
-\BOOKMARK [2][-]{subsection.2.3}{Features}{section.2}% 12
-\BOOKMARK [2][-]{subsection.2.4}{Official Website}{section.2}% 13
-\BOOKMARK [2][-]{subsection.2.5}{Latest Version}{section.2}% 14
-\BOOKMARK [2][-]{subsection.2.6}{Advantages}{section.2}% 15
-\BOOKMARK [2][-]{subsection.2.7}{Disadvantages}{section.2}% 16
-\BOOKMARK [1][-]{section.3}{Fuel}{}% 17
-\BOOKMARK [2][-]{subsection.3.1}{Components}{section.3}% 18
-\BOOKMARK [2][-]{subsection.3.2}{Architecture}{section.3}% 19
-\BOOKMARK [2][-]{subsection.3.3}{Features}{section.3}% 20
-\BOOKMARK [2][-]{subsection.3.4}{Official Website}{section.3}% 21
-\BOOKMARK [2][-]{subsection.3.5}{Latest Version}{section.3}% 22
-\BOOKMARK [2][-]{subsection.3.6}{Advantages}{section.3}% 23
-\BOOKMARK [2][-]{subsection.3.7}{Disadvantages}{section.3}% 24
-\BOOKMARK [1][-]{section.4}{Puppet}{}% 25
-\BOOKMARK [2][-]{subsection.4.1}{Components}{section.4}% 26
-\BOOKMARK [2][-]{subsection.4.2}{Architecture}{section.4}% 27
-\BOOKMARK [2][-]{subsection.4.3}{Features}{section.4}% 28
-\BOOKMARK [2][-]{subsection.4.4}{Official Website}{section.4}% 29
-\BOOKMARK [2][-]{subsection.4.5}{Latest Version}{section.4}% 30
-\BOOKMARK [2][-]{subsection.4.6}{Advantages}{section.4}% 31
-\BOOKMARK [2][-]{subsection.4.7}{Disadvantages}{section.4}% 32
-\BOOKMARK [1][-]{section.5}{Compass}{}% 33
-\BOOKMARK [2][-]{subsection.5.1}{Components}{section.5}% 34
-\BOOKMARK [2][-]{subsection.5.2}{Architecture}{section.5}% 35
-\BOOKMARK [2][-]{subsection.5.3}{Features}{section.5}% 36
-\BOOKMARK [2][-]{subsection.5.4}{Official Website}{section.5}% 37
-\BOOKMARK [2][-]{subsection.5.5}{Latest Version}{section.5}% 38
-\BOOKMARK [2][-]{subsection.5.6}{Advantages}{section.5}% 39
-\BOOKMARK [2][-]{subsection.5.7}{Disadvantages}{section.5}% 40
-\BOOKMARK [1][-]{section.6}{References}{}% 41
+\BOOKMARK [1][-]{section.1}{Group Member Roles and Responsibilities}{}% 1
+\BOOKMARK [1][-]{section.2}{Chef}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Components}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Architecture}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Features}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Official Website}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{Latest Version}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.6}{Advantages}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.7}{Disadvantages}{section.2}% 9
+\BOOKMARK [1][-]{section.3}{Ansible}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{Components}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.2}{Architecture}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.3}{Features}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.4}{Official Website}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.5}{Latest Version}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.6}{Advantages}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.7}{Disadvantages}{section.3}% 17
+\BOOKMARK [1][-]{section.4}{Fuel}{}% 18
+\BOOKMARK [2][-]{subsection.4.1}{Components}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.2}{Architecture}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.3}{Features}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.4}{Official Website}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.5}{Latest Version}{section.4}% 23
+\BOOKMARK [2][-]{subsection.4.6}{Advantages}{section.4}% 24
+\BOOKMARK [2][-]{subsection.4.7}{Disadvantages}{section.4}% 25
+\BOOKMARK [1][-]{section.5}{Puppet}{}% 26
+\BOOKMARK [2][-]{subsection.5.1}{Components}{section.5}% 27
+\BOOKMARK [2][-]{subsection.5.2}{Architecture}{section.5}% 28
+\BOOKMARK [2][-]{subsection.5.3}{Features}{section.5}% 29
+\BOOKMARK [2][-]{subsection.5.4}{Official Website}{section.5}% 30
+\BOOKMARK [2][-]{subsection.5.5}{Latest Version}{section.5}% 31
+\BOOKMARK [2][-]{subsection.5.6}{Advantages}{section.5}% 32
+\BOOKMARK [2][-]{subsection.5.7}{Disadvantages}{section.5}% 33
+\BOOKMARK [1][-]{section.6}{Compass}{}% 34
+\BOOKMARK [2][-]{subsection.6.1}{Components}{section.6}% 35
+\BOOKMARK [2][-]{subsection.6.2}{Architecture}{section.6}% 36
+\BOOKMARK [2][-]{subsection.6.3}{Features}{section.6}% 37
+\BOOKMARK [2][-]{subsection.6.4}{Official Website}{section.6}% 38
+\BOOKMARK [2][-]{subsection.6.5}{Latest Version}{section.6}% 39
+\BOOKMARK [2][-]{subsection.6.6}{Advantages}{section.6}% 40
+\BOOKMARK [2][-]{subsection.6.7}{Disadvantages}{section.6}% 41
+\BOOKMARK [1][-]{section.7}{Table of Comparison of Tools}{}% 42
+\BOOKMARK [1][-]{section.8}{References}{}% 43
