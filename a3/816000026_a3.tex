@@ -23,13 +23,65 @@
 \begin{center}
 	\textbf{Question 1}
 \end{center}
+The essential factors which an organization should be aware of before migrating to a cloud computing platform are:
+\begin{itemize}
+\item
+Business motivations, such as:
+\begin{itemize}
+\item
+Capital and operational costs
+\item
+Time-to-market
+\item
+Mobility options
+\end{itemize}
 
+\item
+Technical Motivations, such as:
+\begin{itemize}
+\item
+Maintenance
+\item
+Scale-up and scale-out facility
+\item
+Application development and modernization
+\end{itemize}
 
+\item
+Security and Privacy Motivations and Policies, such as:
+\begin{itemize}
+\item
+How trustworthy the cloud service provider is
+\item
+Being aware that the enterprise's data will be geographically located across different locations and each location or country may have its own privacy laws and regulations.
+\item
+All the fundamental security mechanisms provided by the CSR: service availability; reliability; authentication; authorization; access control; confidentiality; integrity; auditing.
+\end{itemize}
+\end{itemize}
 
 \newpage
 \begin{center}
 	\textbf{Question 2}
 \end{center}
+As a cloud architect, I would deem that cloud migration is \textbf{not necessary} for this organization. The \underline{primary} reason for this decision is the fact that \textit{applications that experience unpredictable loads will benefit from migration, whereas applications that experience predictable or consistent loads are \textbf{best handled by the enterprise itself.}} 
+From the problem description, the organization seems to experience consistent loads every half an hour or so. This means that it may best be managed in-house.
+
+Some use cases in which cloud migration could be immensely useful include:
+\begin{itemize}
+\item
+applications experiencing huge traffic
+\item
+applications experiencing uncertain loads
+\item
+applications that need quick and continuous development and deployment
+\item
+applications that have growing storage demands
+\item
+applications experiencing peak loads as a result of seasonal traffic.
+\end{itemize}
+
+Based on the information provided, the oil and gas organization in question does not fall under any of the aforementioned categories. \\
+Additionally, from a secuirty and privacy perspective, on migration data are naturally locked in with a provider and enterprises have no idea where their data reside. This is known as the data lock-in problem, and may be an issue for this organization if they ever wish to switch cloud service providers or leave the cloud entirely. Their main purpose for cloud migration would be to help them manage and transfer their data, so this needs to be taken into the most careful consideration. Furthermore, data stored in the cloud may suffer from the data remanence issue, which means that data may still be present (but flagged for deletion) in physical storage even after being deleted. If the data being transferred is sensitive, cloud migration would likely be a bad idea. 
 
 \newpage
 \begin{center}
@@ -84,7 +136,6 @@ Successful cloud business models almost always stem from virtual monitoring.
 Cloud users perform high-level monitoring determine how many resources they have consumed so that they can check their bills.
 \item
 In addition, such high-level monitoring makes it easy for consumers to compare the pricing of different cloud service providers.
-\item
 
 \end{itemize}
 

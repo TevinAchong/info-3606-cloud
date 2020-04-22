@@ -117,9 +117,11 @@ Server Monitoring
 
 \subsection{Official Website}
 The official website for Chef is located at \href{https://www.chef.io}{https://www.chef.io}.
+
 \subsection{Latest Version}
 As of January 28, 2019, the latest stable release of the Chef client is v14.10.9.\\
 As of October 15, 2018, the latest stable release of the Chef server is v12.18.14.
+
 \subsection{Advantages}
 Advantages of using Chef include:
 \begin{enumerate}
@@ -136,6 +138,7 @@ Improving risk management - the \textit{quality} of changes made to the software
 \item
 When using Chef, you can deliver all your infrastructure everywhere continuously.
 \end{enumerate}
+
 \subsection{Disadvantages}
 Some disadvantages include:
 \begin{enumerate}
@@ -159,19 +162,19 @@ Ansible is an open-source automation tool, or platform, used for IT tasks such a
 \begin{itemize}
 \item
 \textbf{Plays}\\
-Playbooks contain plays. Plays are essentially groups of tasks that are performed on defined hosts to enforce your defined functions. Each play must specify a host or group of hosts. 
+Plays, contained within playbooks, are essentially groups of tasks that are performed on defined hosts to enforce your defined functions. Each play must specify a host or group of hosts. 
 \item
 \textbf{Tasks}\\
-Tasks are actions carried out by playbooks. A task definition can contain modules such as yum, git, service, and copy.
+The actions carried out by playbooks are called tasks. A task definition can contain modules such as yum, git, service, and copy.
 \item
 \textbf{Roles}\\
-A role is the way Ansible bundles automation content to make it reusable. Roles are organizational components that can be assigned to a set of hosts to organize tasks. Therefore, instead of creating a monolithic playbook, we can create multiple roles, with each role assigned to complete a unit of work. For example: a webserver role can be defined to install Apache and Varnish on a specified group of servers.
+Ansible bundles automation content to make it reusable via roles. Roles are organizational components. They can be assigned to a number of hosts to organize tasks. Therefore, we can create multiple roles rather than creating a monolithic playbook, with each role assigned to complete a unit of work.
 \item
 \textbf{Handlers}\\
-Handlers are very similar to tasks. The major difference is that a handler will be executed only when it is called by an event. The handler is called by the [notify] directive. The name of the notify directive and the handler must be the same. 
+Handlers and tasks are very much alike. The main difference between handlers and tasks is that a handler will be executed only when an event calls it. The name of the notify directive, which calls the handler, and the handler itself must be the same. 
 \item
 \textbf{Templates}\\
-Templates files are based on Python's Jinja2 template engine and have a .j2 extension. If necessary, you can place contents of your index.html file into a template file. But the real power of templates is comes when variables are used. Ansible's [facts] can be used in template files, and users can even call custom variables.
+Template files are based on Python's Jinja2 template engine and have a .j2 extension. If needed, users are able to place the contents of their index.html file into a template file. However, the primary strength of templates  becomes evident when variables are used. Ansible's [facts] can be used in template files, and users can even call custom variables.
 \item
 \textbf{Variables}\\
 You can include custom-made variables in your playbooks. Variables can be defined in five (5) different ways:
@@ -228,8 +231,10 @@ The first step in automating your applications' life cycle is automating the pro
 
 \subsection{Official Website}
 The official website for Ansible is \href{https://www.ansible.com/}{https://www.ansible.com/}.
+
 \subsection{Latest Version}
 As of June 14, 2018, the latest version of Ansible is 2.9.
+
 \subsection{Advantages}
 Ansible offers the following advantages:
 \begin{enumerate}
@@ -246,6 +251,7 @@ Ansible offers the following advantages:
 \item
 \textit{Efficient:} Because there is no need to install any extra software, there is more room for application resources on the server.
 \end{enumerate}
+
 \subsection{Disadvantages}
 Disadvantages of Ansible include:
 \begin{enumerate}
@@ -264,8 +270,8 @@ Disadvantages of Ansible include:
 \section{Fuel}
 Fuel is an open-source deployment and management tool for OpenStack. It was developed as an OpenStack community effort, and provides an intuitive, GUI-driven experience for deployment and management of OpenStack and related community projects and plug-ins.
 Fuel provides consumer-grade simplicity to streamline and accelerate the otherwise time-consuming, often complex, and error-prone process of deploying, testing and maintaining various configuration flavors of OpenStack at scale. Unlike other platform-specific deployment or management utilities, Fuel is an upstream OpenStack project that focuses on automating the deployment and testing of OpenStack and a range of third-party options, so it is not compromised by hard bundling or vendor lock-in.
-\subsection{Components}
 
+\subsection{Components}
 
 \subsection{Architecture}
 Fuel is comprised of several independent components. Some components are Fuel-specific components, while others are third-party services like Cobbler, Puppet, Mcollective, etc. Some components can be reused separately from Fuel without any further modifications, while some others will require small adjustments.
@@ -319,9 +325,12 @@ support for multiple OpenStack distributions
 
 \subsection{Official Website}
 The official documentation for Fuel can be found at \href{http://docs.fuel-infra.org/openstack/fuel/}{http://docs.fuel-infra.org/openstack/fuel/}.
+
 \subsection{Latest Version}
 Based on our research, the latest available version of Fuel for OpenStack is 9.1.
+
 \subsection{Advantages}
+
 \subsection{Disadvantages}
 
 \newpage
